@@ -25,12 +25,13 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.6);
-            z-index: -1;
+            z-index: -1; /* Original Z-index ng overlay */
         }
 
         .navbar {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
+            z-index: 100; /* Tiyakin na nasa harap ng lahat */
         }
 
         .navbar-brand {
@@ -107,6 +108,8 @@
 
         section {
             padding: 100px 0;
+            position: relative; /* Idinagdag para maging base ng z-index ng content */
+            z-index: 5; /* Tiyakin na nasa harap ng overlay */
         }
 
         .section-title {
@@ -182,13 +185,14 @@
             padding: 5px 0;
             font-size: 0.9rem;
             color: #ddd;
-            z-index: 1000;
+            z-index: 999; /* Tiyakin na nasa harap ng lahat */
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
         }
 
+        /* Video element: FINAL FIX HERE */
         #bg-video {
             position: fixed;
             top: 0;
@@ -196,7 +200,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: -2;
+            z-index: -2; /* Original Z-index ng video */
         }
 
         #facts {
